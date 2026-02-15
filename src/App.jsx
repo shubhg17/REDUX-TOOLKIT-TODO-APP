@@ -8,11 +8,22 @@
 
 //start kese kroge sabse phele store banayega then uske baad ap banaoge apne reducers ko 
 import './App.css'
+import AddTodo  from "./components/AddTodo"
+import Todos from "./components/Todos"
+
+
 
 function App() {
 
   return (
-    <h1>Learn about redux toolkit</h1>
+    //idhar bhi hume apne context api ke jese apne components ko wrap krna padta ha provider se aur voh hume milta ha react redux se aur same chaiye app.jsx me kro ya main.jsx me kro same baat toh do cheeze chaiye provider and second chaiye hota hain store store ko import hi krna padta ha hume use krne ke liye   isliye humne apne store.js me joh humne apna store banaya tha configureStore krke usko export kiya tha such that voh yaha import hoske hum yeh sabh video me main.jsx me import krenge
+    <>
+      <h1>Learn about redux toolkit</h1>
+      <AddTodo/>
+      <Todos/>
+    </>
+    
+    
   )
 }
 
