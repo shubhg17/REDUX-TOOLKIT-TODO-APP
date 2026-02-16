@@ -18,7 +18,7 @@ function AddTodo() {
 
       //dispatch kya krta ha ek reducer ko use krke store me changes krta hain value mein its a method abh konsa method use kroge so u need to import ur individual methods joh humne declare kre reducers me toh hum apne individual reducer ko le ayenge on top abh jabh import krdiya so dispatch ke andar hi reducer ko call krna padta hain 
 
-      //but tume apne addTodo me ek action.payload bhi dena ha humne likha tha todoSlice.js file me voh tha input ke liye aur humari yaha state ha input jisme text hai toh usse bhejdenge direct abh syntax change hogya hain
+      //but humne apne addTodo me ek action.payload bhi dena ha humne likha tha todoSlice.js file me voh tha input ke liye aur humari yaha state ha input jisme text hai toh usse bhejdenge direct abh syntax change hogya hain
       dispatch(addTodo(input))
       //jabh todo add hogya then todo empty krdo as achi practice ha vaha kuch show nah ho add hone ke baad 
       setInput("")

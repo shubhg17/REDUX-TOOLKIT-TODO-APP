@@ -1,3 +1,5 @@
+//sabse phele hum start krte ha store banane se har application ka ek hi store hota hain jise kehte hain single source of truth 
+
 //store ese nhi banta neeche steps follow kro tum store kahi bhi banaskte ho esa kuch fix nhi ha ki folder create file add krke hi banega aap kahi bhi rakh skte ho store ko 
 
 // steps 

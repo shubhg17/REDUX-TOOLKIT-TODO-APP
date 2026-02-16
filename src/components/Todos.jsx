@@ -1,8 +1,8 @@
 import React from "react"
 //lekin aap delete bhi toh kroge kyuki joh list ayegi arrays wali usme delete ka icon mtlb button bhi toh doge toh agar delete icon me de rha hun toh me kuch action lena chahta hun koi bhi action lunga toh usko dispatch krna hoga 
 import {useSelector , useDispatch} from "react-redux"
-import {removeTodo} from "../feautres/todos/todoSlice"
 //abh jabh dispatch use kroge then uske liye ek reducer hoga toh reducer lana padega aur voh kaha se milega meri slice me se  
+import {removeTodo} from "../feautres/todos/todoSlice"
 const Todos = ()=> {
   //useselector ka syntax ki me todos kese leke aun 
   //useSelector sirf ek method hain advantage yeh ha iss method ka ki apko isme state ka acess milta hain ek callback ke andar (state)=>  but agar value ek hi ha toh parenthesis nayi bhi lagaye callback toh koi dikkat nhi  toh state ke andar apko values miljayegi aur iss state ke andar se yeh joh pura store hain iske andar se joh bhi chaiye aap nikal skte hain fir isko variable me hold krliya 

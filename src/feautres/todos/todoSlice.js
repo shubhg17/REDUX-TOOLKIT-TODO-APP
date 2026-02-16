@@ -13,15 +13,15 @@ const initialState = {
    todos: [{id:1 , text:"Hello World"}]
 }
 
-// abh hum dekhenge ki hum kis tareeke se slice banayenge slice kya ha reducer ka almost ek bada version hi hain reducer kya ha functionality hain aur kuch nhi hain aur isko hum export bhi krlete as hume baad me isko kaam bhi me bhi lena hain 
-
 // function sayHi() {
 //    console.log("Hello")
 // }
 
+// abh hum dekhenge ki hum kis tareeke se slice banayenge slice kya ha reducer ka almost ek bada version hi hain reducer kya ha functionality hain aur kuch nhi hain aur isko hum export bhi krlete as hume baad me isko kaam bhi me bhi lena hain 
+
 //iss me bhi object ata hain aur slices ke kuch naam hote hain  apke upar depend krta hain ki aap kya naam rakhna chahte hon but joh bhi naam rkhoge thoda soch ke kyuki jabh hum redux toolkit ka use krenge chrome extension ka toh vaha pe yehi naam show hoga
 export const todoSlice = createSlice({
-     // yeh name property mene khud se nhi banai yeh redux toolkit me hoti ha khud se yehi property ka naam hota hain aur value me string ayegi joh string de do
+     // yeh name property mene khud se nhi banai yeh redux toolkit me hoti ha khud se yehi property ka naam hota hain name  aur value me string ayegi joh string de do
      name: "todo" , 
      //second property joh tum dete hon har slice ka ek initial state hota hain 
      initialState,
@@ -34,7 +34,7 @@ export const todoSlice = createSlice({
       //jese useState useEffect aur bhi hooks ka syntax hota ha toh har bari addTodo me tumhe 2 parameters milenge state and action hamesha inka access milega  state joh ha tume abhi initialState kya ha voh dega aur action kya hota hain abh kayi bari hoskta hai ki kuch values aaye abh jese remove toh remove apne aap toh remove nhi hoga uske liye id chaiye hogi toh kuch values mujhe bhi toh chaiye hogi jabh me removeTodo wale method ko call krunga voh values action me se milti hain 
       addTodo: (state , action)=> {
          //abh idhar todo lana ha toh jese id milegi action se same todo bhi action se milega 
-         //toh todo banaya object format me as upar initialState me arrays me object jayega
+         //toh todo banaya object format me as upar initialState me arrays me object jayega todos ke liye
          const todo = {
             //tum idhar id me Date.now() bhi deskte ho but hume nanoid se krenge just for practice 
             id: nanoid(),
@@ -42,7 +42,8 @@ export const todoSlice = createSlice({
             //abhi tumne sirf todo banaya ha but state me thoda gya ha humne initialstate ko update krna padega 
             text:action.payload
          }
-         //here state will contain our initialState aur tum todos me push kr rhe ho apne todos ko  
+         //here state will contain our initialState aur tum todos me push kr rhe ho apne todo ko  idhar hum direclty add krdenge varna contextapi me hume phele spread krna padta ha purani states ko then add krte the idhar nhi krenge esa direct kyuki idhar state preserve rheti hai contextapi me nhi rehti thi 
+         //push as voh array ha   js ka concept ha yeh
          state.todos.push(todo)
       },
       //idhar bhi state aur action milega 
@@ -62,5 +63,5 @@ export const todoSlice = createSlice({
 //here todoSlice.actions me se iss actions me se values mil jayegi mtlb methods 
 export const {addTodo , removeTodo} = todoSlice.actions
 
-//but humara abhi store khali ghum rha hain toh uss store ko bhi awareness chaiye yeh sare reducers ki agar uspe awareness nhi ha insare reducers ki then voh store maintain nhi kr payega kyuki voh sirf un reducers ki value ko update krta hain joh reducers usme registered hain toh ussko sare reducers ka list chaiye hota hain 
+//but humara abhi store khali ghum rha hain toh uss store ko bhi awareness chaiye yeh sare reducers ki agar uspe awareness nhi ha insare reducers ki then voh store maintain nhi kr payega kyuki voh sirf un reducers ki value ko update krta hain joh reducers usme registered hain toh ussko sare reducers ka list chaiye hoti hain 
 export default todoSlice.reducer
